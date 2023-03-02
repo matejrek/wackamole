@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 export const useMoleStore = create((set) => ({
   running: false,
-  toggleRun: () => set((state) => ({ running: !state.running })),
+  toggleRun: () => set((state: any) => ({ running: !state.running })),
 }))
 
 function App() {
@@ -12,8 +12,8 @@ function App() {
   const [points, setPoints] = useState(0)
   const [lastMove, setLastMove] = useState('')
 
-  const isRunning = useMoleStore((state) => state.running)
-  const toggleRun = useMoleStore((state) => state.toggleRun)
+  const isRunning = useMoleStore((state: any) => state.running)
+  const toggleRun = useMoleStore((state: any) => state.toggleRun)
 
 
   useEffect(() => {
